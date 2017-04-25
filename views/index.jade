@@ -1,0 +1,27 @@
+extends layout
+
+block content
+  div.container
+      h1.h1.text-primary Оставить комментарий
+      form.form-horizontal(method='post', action='/index', name='commentsForm')
+          div.form-group
+              label.control-label Введите своё имя
+              input.form-control.input-sm(type='text', name='userName', placeholder='Введите имя...')
+          div.form-group
+              label.control-label Тема
+              input.form-control.input-sm(type='text', name='theme', placeholder='Тема')
+          div.form-group
+              label.control-label Введите Ваш комментарий
+              input.form-control.input-sm(type='text', name='comment', placeholder='Комментарий...')
+          input.btn.btn-success(type='submit', value='Оставить')
+      div#comments
+
+  script(src='/javascripts/jquery-3.1.1.js')
+  script(src='/javascripts/bootstrap.min.js')
+  script(src='/javascripts/underscore-min.js')
+  script(src='/javascripts/backbone-min.js')
+  script(src='/javascripts/dateStamp.js')
+  script(src='/views/CommentsView.js')
+  script(src='/models/Comment.js')
+  script(src='/javascripts/start.js')
+  script(src='/javascripts/moment.js')
